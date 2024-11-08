@@ -16,7 +16,7 @@ const showOrders = (props) => {
 const showNothing = () => {
     return (
         <div>
-            <h2>There is no bullshit dudidyok</h2>
+            <h2>There is no bullshit</h2>
         </div>
     )
 }

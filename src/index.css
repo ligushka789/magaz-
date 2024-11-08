@@ -12,23 +12,28 @@ body {
   margin: 20px;
 }
 
+
 header .logo {
   font-weight: 600;
-  font-size: 20px;
+  font-size: 18px;
+  padding: 0; /* Убирает отступы */
+  margin: 0; /* Убирает дополнительные внешние отступы */
+  display: inline-block; 
 }
 
 header .presentation {
   margin:auto;
   background: url('./img/img1.jpg') no-repeat;
-  width: 30%;
-  height: 350px;
+  width: 45%;
+  height: 400px;
   background-size: 100% 100%; 
 }
 
 .nav {
   display:flex;
   flex-direction:flex;
-  margin:20px;
+  gap:20px;
+  padding:0px;
   justify-content: space-between; 
   list-style: none; 
   cursor: pointer;
@@ -58,12 +63,12 @@ header {
 }
 header .basket {
   position: absolute;
-  top: 80px;
+  top: 75px;
   right:0;
-  width:350px;
+  min-width:250px;
   min-height:250px;
-  background-color:rgb(154, 127, 179);
-  box-shadow: 4px 5px 15px -7px rgb(36, 165, 44);
+  background-color:rgb(154, 127, 179,65%);
+  box-shadow: 4px 5px 15px -7px rgb(154, 127, 179);
   z-index:10;
 }
 
@@ -194,11 +199,11 @@ main .Item .add-to-cart:hover {
 }
 
 .categories div {
-  display:inline-block;
+  display:list-item;
   justify-content: space-between;
   margin:20px 10px 10px 0;
   padding:10px;
-  border:solid 2px aquamarine;
+  border:solid 2px var(--redbck);
   background-color: aquamarine;
   border-radius:8px;
 }
@@ -207,7 +212,7 @@ main .Item .add-to-cart:hover {
   border:solid 2px var(--redbck);;
   transition:0.5s ease-in-out;
   background-color: var(--redbck);
-  color:white;
+  color:whitesmoke;
 }
 
 a {
