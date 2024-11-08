@@ -7,7 +7,7 @@ const showOrders = (props) => {
     return (
         <div>
             {props.orders.map(el => (
-               <Order key = {el.id} item = {el} onDelete = {props.onDelete} /> 
+               <Order key = {el.id} item = {el} onDelete = {props.onDelete} onCount = {props.onCount}/> 
             ))}
         </div>
     )
@@ -27,7 +27,7 @@ export default function Header(props) {
     let [cartOpen,setCartOpen] = useState(false)
   
     return(
-        <header>
+        <header >
             <div className = "logo"> Shop</div>
             <ul className = "nav">  
             <li> <a href ="https://ligushka789.github.io/babybaby-/"> About us</a></li>

@@ -207,12 +207,13 @@
     this.addToOrder = this.addToOrder.bind(this)
     this.deleteOrder = this.deleteOrder.bind(this)
     this.chooseCategory = this.chooseCategory.bind(this)
+    this.incrementCount = this.incrementCount.bind(this)
   }
   render(props)
    {
         return (
       <div className='Wrapper'>
-        <Header orders = {this.state.orders} onDelete = {this.deleteOrder}/>
+        <Header orders = {this.state.orders} onDelete = {this.deleteOrder} onCount = {this.incrementCount}/>
         <Categories chooseCategory = {this.chooseCategory}/>
         <Items items = {this.state.currentItems} onAdd = {this.addToOrder}/>
 
@@ -221,6 +222,19 @@
       </div>
     )
   }
+
+  ////////////////////////////////
+
+  incrementCount = (id) => {
+    this.setState((prevState) => ({
+        items: prevState.orders.map(item => 
+            item.id === id ? { ...item, count: item.count + 1 } : item
+        )
+    }));
+}
+
+
+  ///////////////////////////////
 
   deleteOrder(id) {
     this.setState({ orders: this.state.orders.filter(el =>
